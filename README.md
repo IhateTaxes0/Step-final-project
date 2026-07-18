@@ -8,7 +8,7 @@ The project is a 2D adventure game with scenes, scripts, UI, combat systems, inv
 
 - scripts/: gameplay logic, player controls, combat, UI, and scene management
 - world/: Godot scenes and game levels
-- resources/: game assets and media files
+- resources/: game assets and media files (will be add later)
 
 ## Project Structure
 
