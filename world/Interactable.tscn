@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c52kw6fseyc64"]
+
+[ext_resource type="Script" uid="uid://bcvht8nxvjlko" path="res://scripts/interactable.gd" id="1_hgjy5"]
+[ext_resource type="Shader" uid="uid://b2ryc8vh1jxhp" path="res://world/Interactable.gdshader" id="2_wk4h6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjy5"]
+size = Vector2(32, 19.780222)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gns7n"]
+shader = ExtResource("2_wk4h6")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_hgjy5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_hgjy5")
+
+[node name="Highlight" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gns7n")
+position = Vector2(6, 0)
+scale = Vector2(1, 0.8333333)
+region_rect = Rect2(0, 4, 32, 24)

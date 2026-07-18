@@ -1,0 +1,186 @@
+[gd_scene load_steps=20 format=3 uid="uid://vb7x8pb6nbko"]
+
+[ext_resource type="Texture2D" uid="uid://d4a325t35x2lo" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_hdcic"]
+[ext_resource type="Script" uid="uid://cddj414xgxcth" path="res://scripts/scene_transition.gd" id="1_qlxwv"]
+[ext_resource type="Texture2D" uid="uid://bn6p0r2qm5gbm" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/progress-000.png" id="2_qlxwv"]
+[ext_resource type="Texture2D" uid="uid://csnwnfnyxxvjf" path="res://resources/characters/protag/right_run.png" id="3_f4m0y"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csogn"]
+texture = ExtResource("1_hdcic")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f78of"]
+texture = ExtResource("2_qlxwv")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tm3w"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1amh"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6od0c"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8exu"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye4br"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oov6g"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1b5v"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(576, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qrx1"]
+atlas = ExtResource("3_f4m0y")
+region = Rect2(672, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60a58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tm3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1amh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6od0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8exu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye4br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oov6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1b5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qrx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_k13bj"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_02e3w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hdcic"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ich6s"]
+_data = {
+&"RESET": SubResource("Animation_02e3w"),
+&"fade_in": SubResource("Animation_k13bj"),
+&"fade_out": SubResource("Animation_hdcic")
+}
+
+[node name="SceneTransition" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_qlxwv")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_csogn")
+theme_override_styles/fill = SubResource("StyleBoxTexture_f78of")
+show_percentage = false
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 273.0
+offset_right = 677.0
+offset_bottom = 337.0
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Background"]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(657, 297)
+sprite_frames = SubResource("SpriteFrames_60a58")
+frame_progress = 0.38782787
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ich6s")
+}

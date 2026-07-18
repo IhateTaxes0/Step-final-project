@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfcdusqlao6kf"]
+
+[ext_resource type="PackedScene" uid="uid://c52kw6fseyc64" path="res://world/Interactable.tscn" id="1_gek6y"]
+[ext_resource type="Shader" uid="uid://b2ryc8vh1jxhp" path="res://world/Interactable.gdshader" id="2_vi8dc"]
+
+[sub_resource type="Gradient" id="Gradient_ovj3a"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d4nar"]
+gradient = SubResource("Gradient_ovj3a")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya2yf"]
+
+[sub_resource type="Gradient" id="Gradient_um4vk"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a34ll"]
+gradient = SubResource("Gradient_um4vk")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.7, 0.90000004)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx53t"]
+size = Vector2(24, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5hgg"]
+shader = ExtResource("2_vi8dc")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[node name="MazeExitDoor" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.1525574e-07, 5.364418e-07)
+scale = Vector2(0.31250003, 0.31249997)
+texture = SubResource("GradientTexture2D_d4nar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ya2yf")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_a34ll")
+
+[node name="Area2D" parent="." instance=ExtResource("1_gek6y")]
+object_type = "DreamlandExit"
+custom_prompt = "exit the dream land?"
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -4.7683716e-07)
+shape = SubResource("RectangleShape2D_jx53t")
+
+[node name="Highlight" parent="Area2D" index="1"]
+material = SubResource("ShaderMaterial_y5hgg")
+
+[editable path="Area2D"]

@@ -1,0 +1,15 @@
+# Godot-specific generated files
+.godot/
+
+# Exclude imported asset resources and media-heavy folders
+resources/
+*.import
+*.png
+*.png.import
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.bmp
+*.tga
+*.psd

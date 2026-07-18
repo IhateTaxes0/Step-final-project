@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctq3ll0farsqb"]
+
+[ext_resource type="Script" uid="uid://fcxk4scgfsx8" path="res://scripts/stats_ui.gd" id="1_5hs33"]
+[ext_resource type="Texture2D" uid="uid://dyufdxi1yydin" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Transparent center/panel-transparent-center-001.png" id="1_ayp16"]
+[ext_resource type="Texture2D" uid="uid://d4a325t35x2lo" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="2_5hs33"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ts8ck"]
+texture = ExtResource("1_ayp16")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bojw"]
+texture = ExtResource("2_5hs33")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="StatsUI" type="CanvasLayer"]
+script = ExtResource("1_5hs33")
+
+[node name="StatsBorder" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.5
+offset_top = -300.0
+offset_right = 182.5
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ts8ck")
+
+[node name="MarginContainer" type="MarginContainer" parent="StatsBorder"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsBorder/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleLabel" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Stats"
+horizontal_alignment = 1
+
+[node name="LabelHP" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+
+[node name="LabelMana" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+
+[node name="LabelNightmare" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelMonsters" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelPassiveTitle" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Passive:"
+
+[node name="PassivesMargin" type="MarginContainer" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsBorder/MarginContainer/VBoxContainer/PassivesMargin"]
+layout_mode = 2
+
+[node name="LabelPassive1" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer/PassivesMargin/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelPassive2" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer/PassivesMargin/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelWeaponTitle" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "current weapon:"
+
+[node name="CenterContainer" type="CenterContainer" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="StatsBorder/MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7bojw")
+
+[node name="MarginContainer" type="MarginContainer" parent="StatsBorder/MarginContainer/VBoxContainer/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="WeaponIcon" type="TextureRect" parent="StatsBorder/MarginContainer/VBoxContainer/CenterContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="WeaponStatsBox" type="PanelContainer" parent="StatsBorder/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StatsBorder/MarginContainer/VBoxContainer/WeaponStatsBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsBorder/MarginContainer/VBoxContainer/WeaponStatsBox/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelDamage" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer/WeaponStatsBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelSkill" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer/WeaponStatsBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelEffect" type="Label" parent="StatsBorder/MarginContainer/VBoxContainer/WeaponStatsBox/MarginContainer/VBoxContainer"]
+layout_mode = 2

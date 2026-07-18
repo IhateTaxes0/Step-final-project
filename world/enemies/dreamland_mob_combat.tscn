@@ -1,0 +1,211 @@
+[gd_scene load_steps=30 format=3 uid="uid://ci0i6icgcbuyg"]
+
+[ext_resource type="Script" uid="uid://d2fbw5h1shfks" path="res://scripts/maze_mob_combat.gd" id="1_5fl1r"]
+[ext_resource type="Texture2D" uid="uid://ck2yohp8a67aw" path="res://resources/wanderer_knight/attack.png" id="2_htcdn"]
+[ext_resource type="Texture2D" uid="uid://d4a325t35x2lo" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="3_supua"]
+[ext_resource type="Texture2D" uid="uid://bn6p0r2qm5gbm" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/progress-000.png" id="4_nusbr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfgvl"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(536, 0, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgb7o"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(670, 0, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u243e"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(0, 163, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lybiq"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(134, 163, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsfqg"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(268, 163, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48p10"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(402, 163, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv6n8"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(536, 163, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpuy8"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(670, 163, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cbmr"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(0, 326, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnx1d"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(134, 326, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihfce"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(268, 326, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnb74"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(402, 326, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg1xq"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(536, 326, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh2ls"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(670, 326, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1my0d"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(0, 489, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pyc0"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(134, 489, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lssf6"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(268, 489, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j6mu"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(0, 652, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klebo"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(0, 0, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nx0s"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(134, 0, 134, 163)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teeg5"]
+atlas = ExtResource("2_htcdn")
+region = Rect2(268, 0, 134, 163)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6ihr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfgvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgb7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u243e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lybiq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsfqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48p10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv6n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpuy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cbmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnx1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihfce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnb74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg1xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh2ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1my0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pyc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lssf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j6mu")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klebo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nx0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teeg5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lybiq"]
+texture = ExtResource("3_supua")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nsfqg"]
+texture = ExtResource("4_nusbr")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_48p10"]
+font_size = 31
+
+[node name="DreamlandMobCombat" type="Node2D"]
+script = ExtResource("1_5fl1r")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(650, 347)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_u6ihr")
+animation = &"idle"
+frame_progress = 0.07926697
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.51, 0, 0, 1)
+offset_left = 1.0
+offset_right = 1280.0
+offset_bottom = 24.0
+theme_override_styles/background = SubResource("StyleBoxTexture_lybiq")
+theme_override_styles/fill = SubResource("StyleBoxTexture_nsfqg")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1279.0
+offset_bottom = 80.0
+text = "Wandering Knight"
+label_settings = SubResource("LabelSettings_48p10")
+horizontal_alignment = 1
+vertical_alignment = 1

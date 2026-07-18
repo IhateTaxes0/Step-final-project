@@ -1,0 +1,182 @@
+[gd_scene load_steps=20 format=3 uid="uid://y0sdfkfn32ba"]
+
+[ext_resource type="Script" uid="uid://cv5msmv35infr" path="res://scripts/hud.gd" id="1_awjg6"]
+[ext_resource type="Texture2D" uid="uid://d4a325t35x2lo" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="2_ed233"]
+[ext_resource type="Texture2D" uid="uid://bn6p0r2qm5gbm" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/progress-000.png" id="3_1usfa"]
+[ext_resource type="Texture2D" uid="uid://dw63yu3f8jpcn" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-001.png" id="4_ed233"]
+[ext_resource type="Texture2D" uid="uid://clggnclmqcunw" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/progress-001.png" id="5_cj7ph"]
+[ext_resource type="Texture2D" uid="uid://c5w5pufs1ledk" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Panel/panel-030.png" id="6_jb6i1"]
+[ext_resource type="Texture2D" uid="uid://c5uqno6cx1qhd" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-010.png" id="7_3v4sg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj7ph"]
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1usfa"]
+texture = ExtResource("2_ed233")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3v4sg"]
+texture = ExtResource("3_1usfa")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jb6i1"]
+font_size = 25
+font_color = Color(0.6776608, 0.6777853, 1, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ed233"]
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jb6i1"]
+texture = ExtResource("4_ed233")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i48e8"]
+texture = ExtResource("5_cj7ph")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cj7ph"]
+font_size = 30
+font_color = Color(1, 0, 0.016666412, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21o3l"]
+texture = ExtResource("6_jb6i1")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.3137255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yjdn"]
+texture = ExtResource("7_3v4sg")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_i48e8"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3v4sg"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_awjg6")
+
+[node name="SanityContainer" type="Panel" parent="."]
+offset_right = 830.556
+offset_bottom = 103.0
+scale = Vector2(0.533, 0.533)
+theme_override_styles/panel = SubResource("StyleBoxTexture_cj7ph")
+
+[node name="SanityBar" type="ProgressBar" parent="SanityContainer"]
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 830.55597
+offset_bottom = 103.0
+theme_override_styles/background = SubResource("StyleBoxTexture_1usfa")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3v4sg")
+show_percentage = false
+
+[node name="SanityLabel" type="Label" parent="SanityContainer"]
+modulate = Color(0.103743516, 0.10374353, 0.103743516, 1)
+z_index = 5
+layout_mode = 0
+offset_right = 831.1444
+offset_bottom = 103.18949
+text = "SANITY"
+label_settings = SubResource("LabelSettings_jb6i1")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnxietyContainer" type="Panel" parent="."]
+offset_top = 60.0
+offset_right = 1016.166
+offset_bottom = 163.0
+scale = Vector2(0.433, 0.433)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ed233")
+
+[node name="AnxietyBar" type="ProgressBar" parent="AnxietyContainer"]
+modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 0
+offset_right = 1016.16626
+offset_bottom = 103.0
+theme_override_styles/background = SubResource("StyleBoxTexture_jb6i1")
+theme_override_styles/fill = SubResource("StyleBoxTexture_i48e8")
+show_percentage = false
+
+[node name="AnxietyLabel" type="Label" parent="AnxietyContainer"]
+z_index = 5
+layout_mode = 0
+offset_top = 1.5258789e-05
+offset_right = 1016.16626
+offset_bottom = 103.926094
+text = "ANXIETY"
+label_settings = SubResource("LabelSettings_cj7ph")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="day_panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -97.0
+offset_right = 97.0
+offset_bottom = 224.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_21o3l")
+
+[node name="Panel" type="Panel" parent="day_panel"]
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 224.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3yjdn")
+
+[node name="TimeContainer" type="VBoxContainer" parent="day_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.10714286
+anchor_right = 0.95900005
+anchor_bottom = 0.9110001
+offset_left = 0.046000004
+offset_right = -0.04600525
+offset_bottom = -4.06398
+theme_override_constants/separation = 100
+
+[node name="TimeLabel" type="Label" parent="day_panel/TimeContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_i48e8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DayLabel" type="Label" parent="day_panel/TimeContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_3v4sg")
+horizontal_alignment = 1
+vertical_alignment = 1

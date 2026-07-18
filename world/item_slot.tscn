@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c20r4t7ko2bqa"]
+
+[ext_resource type="Texture2D" uid="uid://bvapr53jvv4l0" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Transparent center/panel-transparent-center-004.png" id="1_qskp0"]
+[ext_resource type="Texture2D" uid="uid://cvrth48dfn5p" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-004.png" id="1_ubkto"]
+[ext_resource type="Script" uid="uid://ysj8h2oen7mb" path="res://scripts/item_slot.gd" id="2_ubkto"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m46cn"]
+texture = ExtResource("1_ubkto")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agyt1"]
+texture = ExtResource("1_qskp0")
+modulate_color = Color(1, 1, 1, 0.49019608)
+
+[node name="ItemSlot" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+anchors_preset = -1
+anchor_right = 0.23400001
+anchor_bottom = 0.41700003
+offset_right = 0.47998047
+offset_bottom = -0.24002075
+theme_override_styles/normal = SubResource("StyleBoxTexture_m46cn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_agyt1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_agyt1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_agyt1")
+script = ExtResource("2_ubkto")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="FruitIcon" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

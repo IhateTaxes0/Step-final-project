@@ -1,0 +1,211 @@
+[gd_scene load_steps=19 format=3 uid="uid://by0e0gweby5vb"]
+
+[ext_resource type="Texture2D" uid="uid://cbiilgonmer6p" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Transparent center/panel-transparent-center-012.png" id="1_7me5w"]
+[ext_resource type="Script" uid="uid://ci3yg64ufcutg" path="res://scripts/intro.gd" id="1_cpe65"]
+[ext_resource type="Texture2D" uid="uid://3l8871w36ug0" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Panel/panel-012.png" id="2_7me5w"]
+[ext_resource type="Texture2D" uid="uid://uymewmfdj1s5" path="res://resources/background/main_menu_1080.png" id="2_8fcwc"]
+[ext_resource type="PackedScene" uid="uid://488phbetr2f4" path="res://world/save_load_ui.tscn" id="5_7ceg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ceg4"]
+bg_color = Color(0.2627451, 0, 0.4, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwndw"]
+texture = ExtResource("1_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7rnbg"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.74509805)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_he2xc"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.5882353)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fcwc"]
+texture = ExtResource("1_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ceg4"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.74509805)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a37bb"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.5882353)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8eec"]
+texture = ExtResource("1_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itysm"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.74509805)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myts5"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.5882353)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j40ry"]
+texture = ExtResource("1_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gfj4g"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.74509805)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_syrbe"]
+texture = ExtResource("2_7me5w")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.5882353)
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cpe65")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ceg4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 174.0
+offset_top = -2.9999998
+offset_right = 1719.0
+offset_bottom = 1015.0
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("2_8fcwc")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 318.0
+offset_right = -815.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="BtnStart" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Start"
+
+[node name="BtnLoad" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_8fcwc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7ceg4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a37bb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_a37bb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_a37bb")
+text = "Load"
+
+[node name="BtnOption" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_q8eec")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_itysm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_myts5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_myts5")
+theme_override_styles/focus = SubResource("StyleBoxTexture_myts5")
+text = "Option"
+
+[node name="BtnExit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_j40ry")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gfj4g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_syrbe")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_syrbe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_syrbe")
+text = "Exit"
+
+[node name="SaveLoadUI" parent="." instance=ExtResource("5_7ceg4")]
+visible = false

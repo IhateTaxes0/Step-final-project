@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqqwltydlnnx5"]
+
+[ext_resource type="PackedScene" uid="uid://37xlavxfvavn" path="res://world/dreamland_edit.tscn" id="1_rhj01"]
+[ext_resource type="Script" uid="uid://c7kxs38uj0b2s" path="res://scripts/dreamland_1.gd" id="1_wqv5c"]
+[ext_resource type="PackedScene" uid="uid://dx5l4wmdoooi0" path="res://world/player.tscn" id="2_qqpwb"]
+[ext_resource type="PackedScene" uid="uid://y0sdfkfn32ba" path="res://world/HUD.tscn" id="3_wqv5c"]
+[ext_resource type="PackedScene" uid="uid://d0nwt2i8smhds" path="res://world/inventory_ui.tscn" id="4_rhj01"]
+[ext_resource type="PackedScene" uid="uid://ctq3ll0farsqb" path="res://world/stats_ui.tscn" id="5_qqpwb"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wqv5c")
+
+[node name="dreamland_edit" parent="." instance=ExtResource("1_rhj01")]
+position = Vector2(0, -389)
+
+[node name="player" parent="." instance=ExtResource("2_qqpwb")]
+position = Vector2(636, 372)
+
+[node name="Camera2D2" type="Camera2D" parent="player"]
+position = Vector2(2.5, 89)
+scale = Vector2(0.25, 0.25)
+offset = Vector2(0, -370)
+limit_left = 2
+limit_top = -786
+limit_right = 2050
+limit_bottom = 1769
+
+[node name="HUD" parent="." instance=ExtResource("3_wqv5c")]
+
+[node name="InventoryUI" parent="." instance=ExtResource("4_rhj01")]
+
+[node name="StatsUI" parent="." instance=ExtResource("5_qqpwb")]

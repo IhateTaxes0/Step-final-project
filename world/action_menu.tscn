@@ -1,0 +1,250 @@
+[gd_scene load_steps=23 format=3 uid="uid://glbbjfdaryuo"]
+
+[ext_resource type="Texture2D" uid="uid://cv16pkw5lvao7" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Panel/panel-007.png" id="1_4klx1"]
+[ext_resource type="Script" uid="uid://dp3x6yvc4asq4" path="res://scripts/action_menu.gd" id="1_ak3pw"]
+[ext_resource type="Texture2D" uid="uid://dh1a6pgtt6ksm" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-007.png" id="2_yqcjg"]
+[ext_resource type="Texture2D" uid="uid://0mhht3w50sjl" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Panel/panel-010.png" id="4_jpdkw"]
+[ext_resource type="Texture2D" uid="uid://c5uqno6cx1qhd" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-010.png" id="5_ookdc"]
+[ext_resource type="Texture2D" uid="uid://cs54nqf3xicd3" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-005.png" id="6_e2q3s"]
+[ext_resource type="Texture2D" uid="uid://c2mmxgvhvwoxa" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Panel/panel-005.png" id="7_novsg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqcjg"]
+texture = ExtResource("2_yqcjg")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ak3pw"]
+texture = ExtResource("1_4klx1")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2q3s"]
+font_size = 24
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2q3s"]
+texture = ExtResource("4_jpdkw")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_novsg"]
+texture = ExtResource("5_ookdc")
+texture_margin_left = 50.0
+texture_margin_top = 40.0
+texture_margin_right = 50.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13ksm"]
+texture = ExtResource("6_e2q3s")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kopra"]
+texture = ExtResource("7_novsg")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1, 1, 1, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwdye"]
+texture = ExtResource("7_novsg")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1, 1, 1, 0.8235294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6vcb"]
+texture = ExtResource("6_e2q3s")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ps1gv"]
+texture = ExtResource("7_novsg")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1, 1, 1, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bl65y"]
+texture = ExtResource("7_novsg")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1, 1, 1, 0.8235294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vw3p1"]
+texture = ExtResource("6_e2q3s")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5e6o"]
+texture = ExtResource("7_novsg")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1, 1, 1, 0.7058824)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hamoe"]
+texture = ExtResource("7_novsg")
+texture_margin_left = 40.0
+texture_margin_top = 20.0
+texture_margin_right = 40.0
+texture_margin_bottom = 20.0
+modulate_color = Color(1, 1, 1, 0.8235294)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vygmd"]
+
+[node name="Action_menu" type="CanvasLayer"]
+layer = 50
+script = ExtResource("1_ak3pw")
+
+[node name="dialouge" type="Panel" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -214.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yqcjg")
+
+[node name="dialouge_texture" type="Panel" parent="dialouge"]
+modulate = Color(0, 0, 0, 0.27450982)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -214.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ak3pw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="dialouge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PromptText" type="Label" parent="dialouge"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = 31.0
+offset_right = 1265.0
+offset_bottom = 179.0
+size_flags_horizontal = 3
+label_settings = SubResource("LabelSettings_e2q3s")
+autowrap_mode = 2
+text_direction = 1
+
+[node name="NameLabel" type="Label" parent="dialouge"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 29.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 28.0
+
+[node name="OptionPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.37254903)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -20.0
+offset_bottom = 103.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_e2q3s")
+
+[node name="OptionPanel_texture" type="Panel" parent="OptionPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 123.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_novsg")
+
+[node name="OptionBox" type="VBoxContainer" parent="OptionPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 25.0
+offset_right = 186.33337
+offset_bottom = 181.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 8
+
+[node name="YesButton" type="Button" parent="OptionPanel/OptionBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_13ksm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kopra")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kwdye")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kwdye")
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="OptionPanel/OptionBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_t6vcb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ps1gv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bl65y")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bl65y")
+text = "No"
+
+[node name="MysteryButton" type="Button" parent="OptionPanel/OptionBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_vw3p1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g5e6o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hamoe")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hamoe")
+text = "???"
+
+[node name="CodeInput" type="LineEdit" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -533.0
+offset_top = -101.0
+offset_right = 534.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vygmd")
+alignment = 1

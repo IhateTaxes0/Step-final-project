@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq0skcuq7xyvv"]
+
+[ext_resource type="PackedScene" uid="uid://d1lvgu6227xud" path="res://world/bathroom_scene.tscn" id="1_v4u36"]
+[ext_resource type="PackedScene" uid="uid://dx5l4wmdoooi0" path="res://world/player.tscn" id="2_2s6w6"]
+[ext_resource type="PackedScene" uid="uid://y0sdfkfn32ba" path="res://world/HUD.tscn" id="3_2s6w6"]
+
+[node name="bathroom" type="Node2D"]
+
+[node name="BathroomScene" parent="." instance=ExtResource("1_v4u36")]
+position = Vector2(300, 25)
+
+[node name="player" parent="." instance=ExtResource("2_2s6w6")]
+unique_name_in_owner = true
+position = Vector2(651, 640)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = 297
+limit_top = 24
+limit_right = 1006
+limit_bottom = 792
+
+[node name="HUD" parent="." instance=ExtResource("3_2s6w6")]

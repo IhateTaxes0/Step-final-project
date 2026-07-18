@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0wvops5wq1so"]
+
+[ext_resource type="Script" uid="uid://cba7s0h7hna8c" path="res://scripts/blank_dialouge.gd" id="1_hvxhh"]
+
+[node name="blank_dialouge" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_hvxhh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.11764706, 1)

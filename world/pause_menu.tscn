@@ -1,0 +1,160 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkvfgonnx0b07"]
+
+[ext_resource type="Script" uid="uid://d311fijlsndvu" path="res://scripts/pause_menu.gd" id="1_rhktu"]
+[ext_resource type="Texture2D" uid="uid://cbiilgonmer6p" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Transparent center/panel-transparent-center-012.png" id="1_w31gr"]
+[ext_resource type="Texture2D" uid="uid://3l8871w36ug0" path="res://resources/kenney_fantasy-ui-borders/PNG/Double/Panel/panel-012.png" id="2_rhktu"]
+[ext_resource type="PackedScene" uid="uid://488phbetr2f4" path="res://world/save_load_ui.tscn" id="4_7c5js"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w31gr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwndw"]
+texture = ExtResource("1_w31gr")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7rnbg"]
+texture = ExtResource("2_rhktu")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.74509805)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_he2xc"]
+texture = ExtResource("2_rhktu")
+texture_margin_left = 60.0
+texture_margin_top = 40.0
+texture_margin_right = 60.0
+texture_margin_bottom = 40.0
+modulate_color = Color(1, 1, 1, 0.5882353)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 200
+script = ExtResource("1_rhktu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -155.0
+offset_right = 302.04004
+offset_bottom = 565.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_w31gr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="BtnResume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Resume"
+
+[node name="BtnSave" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Save"
+
+[node name="BtnLoad" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Load"
+
+[node name="BtnOption" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Option"
+
+[node name="BtnMainMenu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Exit to Main Menu"
+
+[node name="BtnDesktop" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_cwndw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7rnbg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_he2xc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_he2xc")
+text = "Exit to Desktop"
+
+[node name="SaveLoadUI" parent="." instance=ExtResource("4_7c5js")]
+layer = 201
+visible = false
