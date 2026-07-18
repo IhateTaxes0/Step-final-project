@@ -24,9 +24,8 @@ func _input(event):
 			get_viewport().set_input_as_handled()
 
 func _on_start_pressed():
-	# Resets to a brand new game
-	GameManager.day = 1
-	GameManager.has_seen_intro = false 
+	# THE FIX: Completely obliterate old save data in memory!
+	GameManager.reset_new_game()
 	
 	SceneTransition.change_scene("res://world/main.tscn")
 

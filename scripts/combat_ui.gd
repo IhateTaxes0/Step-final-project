@@ -14,7 +14,6 @@ var sprite_base_scales = []
 #  UI NODE REFERENCES
 # ------------------------------------------------------------------
 
-# THE FIX: Added VBoxContainer to the path to match your exact node tree!
 @onready var skill_panel = $MarginContainer/VBoxContainer/SkillPanel
 @onready var btn_mana_regen = $MarginContainer/VBoxContainer/SkillPanel/HBoxContainer/BtnManaRegen
 @onready var btn_vertical_slash = $MarginContainer/VBoxContainer/SkillPanel/HBoxContainer/BtnVerticalSlash
@@ -682,11 +681,12 @@ func trigger_victory():
 		GameManager.is_skill_system_unlocked = true
 		GameManager.return_from_combat = false
 		
+		self.hide()
 		ActionMenu.show_message("well done, my king", "Domlr")
 		await ActionMenu.choice_made
 		ActionMenu.show_message("you have grapsed the power of creation and destruction", "Domlr")
 		await ActionMenu.choice_made
-		
+
 		fade_layer.queue_free() 
 		GameManager.start_new_day()
 		SceneTransition.change_scene("res://world/main.tscn")

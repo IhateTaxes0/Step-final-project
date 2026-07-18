@@ -222,15 +222,25 @@ func get_formatted_time() -> String:
 		
 	return str(hours) + ":" + ("%02d" % mins) + " " + am_pm
 
-func advance_time(minutes_to_add: int):
+func advance_time(minutes_to_add: int) -> bool:
 	current_time_minutes += minutes_to_add
 	
 	if current_time_minutes >= 1320:
 		modify_stats(5, -5)
-		start_new_day() # Call new helper function
-		print("Passed out! It is now Day: ", day)
+		start_new_day() 
+		
+		cutscene_dialogues = [
+			{"text": "you got too tired and faint", "speaker": ""}
+		]
+		cutscene_target_scene = "res://world/main.tscn"
+		entrance_door = "bed" # Ensure they wake up in bed!
+		SceneTransition.change_scene("res://world/blank_dialouge.tscn")
+		
+		# Tells interactable.gd to abort whatever it was doing!
+		return true 
 		
 	time_advanced.emit(get_formatted_time(), day)
+	return false
 
 func start_new_day():
 	current_time_minutes = 540
@@ -465,6 +475,31 @@ func load_game(slot_id: int) -> bool:
 		return true
 	return false
 	
-# Call this right after a boss fight or ending a day!
+func reset_new_game():
+	day = 1
+	has_seen_intro = false
+	has_seen_dreamland_intro = false
+	has_seen_dreamland_outro = false
+	anxiety = 50
+	sanity = 50
+	current_hp = max_hp
+	current_mana = max_mana
+	inventory.clear()
+	used_objects_today.clear()
+	passive_stacks.clear()
+	active_passives.clear()
+	has_rosari = false
+	is_slot_system_unlocked = false
+	is_skill_system_unlocked = false
+	monsters_slain = 0
+	current_time_minutes = 540
+	nightmare_chance = 0
+	total_nightmares = 0
+	dead_enemy_positions.clear()
+	enemy_combat_queue.clear()
+	is_transitioning_to_combat = false
+	return_from_combat = false	
+	
+# Call this right after a boss fight or ending a day
 func trigger_auto_save():
 	save_game(0)

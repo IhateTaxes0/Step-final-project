@@ -107,41 +107,80 @@ func _on_area_exited(area):
 			highlight.hide()
 		is_player_near = false
 		
-var books = randi() % 3
-var pc = randi() % 3
+
 func trigger_interaction():
 	match object_type:
 		"Bookshelf":
+			# THE FIX: randi_range guarantees a 1, 2, or 3!
+			var books = randi_range(1, 3) 
+			
 			if books == 1:
 				ActionMenu.show_message("You read lightnovel")
-				GameManager.advance_time(180)
-			if books == 2:
-				ActionMenu.show_message("You read psycological book")
-				GameManager.advance_time(180)
-			if books == 3:
-				ActionMenu.show_message("you tried to read but keep thinking about other things")
-				GameManager.advance_time(220)
+				await ActionMenu.choice_made
+				GameManager.modify_stats(-5, 5) 
+				if GameManager.advance_time(180): return
 				
-			await ActionMenu.choice_made
-			GameManager.modify_stats(-5, 5) 
-			
+			elif books == 2:
+				ActionMenu.show_message("You read psycological book")
+				await ActionMenu.choice_made
+				GameManager.modify_stats(-5, 5) 
+				if GameManager.advance_time(180): return
+				
+			elif books == 3:
+				ActionMenu.show_message("you tried to read but keep thinking about other things")
+				await ActionMenu.choice_made
+				GameManager.modify_stats(-5, 5) 
+				if GameManager.advance_time(220): return
+				
 		"Sink":
 			ActionMenu.show_message("You splash cold water on your face. It helps clear your mind.")
 			await ActionMenu.choice_made
 			GameManager.modify_stats(-5, 5) 
-			GameManager.advance_time(15)
+			if GameManager.advance_time(15): return
 			
-		"Bathroom":
-			# Bathroom still uses the Inspector variables
-			GameManager.entrance_door = door_name 
-			if target_scene_path != "":
-				GameManager.current_room_path = target_scene_path
-				SceneTransition.change_scene(target_scene_path)
+		"PC":
+			var pc = randi_range(1, 3)
+			if pc == 1:
+				ActionMenu.show_message("You browse the internet for a while. It's distracting, but draining.")
+				await ActionMenu.choice_made
+				GameManager.modify_stats(0, 5)
+				if GameManager.advance_time(360): return
+				
+			elif pc == 2:
+				ActionMenu.show_message("you played online games, although it give you more stress but thats the only place where you can vent your boredom")
+				await ActionMenu.choice_made
+				GameManager.modify_stats(10, 10)
+				if GameManager.advance_time(560): return
+				
 			else:
-				GameManager.current_room_path = "res://world/bathroom_place.tscn"
-				SceneTransition.change_scene("res://world/bathroom_place.tscn")
+				ActionMenu.show_message("you spent time watching online video and social media")
+				await ActionMenu.choice_made
+				GameManager.modify_stats(5, 10)
+				if GameManager.advance_time(460): return
+				
+		"Exit":
+			var current_room = get_tree().current_scene.scene_file_path.to_lower()
 			
-		# --- THE FIX: BULLETPROOF HARDCODED BED LOGIC ---
+			if "balcony" in current_room:
+				ActionMenu.show_message("You return to your room... (5 hours passed)")
+				await ActionMenu.choice_made
+				
+				# THE FIX: If advance_time returns true, they fainted!
+				# The 'return' command immediately stops the script from teleporting them!
+				if GameManager.advance_time(300): return 
+				
+				GameManager.entrance_door = "exit" 
+			else:
+				ActionMenu.show_message("You step out onto the balcony.")
+				await ActionMenu.choice_made
+				
+				GameManager.entrance_door = "exit" 
+			
+			if target_scene_path != "":
+				GameManager.current_room_path = target_scene_path 
+				SceneTransition.change_scene(target_scene_path)
+			
+		# --- BULLETPROOF HARDCODED BED LOGIC ---
 		"Bed":
 			ActionMenu.show_message("You close your eyes and let the exhaustion take over...")
 			await ActionMenu.choice_made
@@ -162,40 +201,6 @@ func trigger_interaction():
 			if target_dream != "":
 				GameManager.current_room_path = target_dream # saving
 				SceneTransition.change_scene(target_dream)
-			
-		"PC":
-			if pc == 1:
-				ActionMenu.show_message("You browse the internet for a while. It's distracting, but draining.")
-				await ActionMenu.choice_made
-				GameManager.modify_stats(0, 5)
-				GameManager.advance_time(360)
-			elif pc == 2:
-				ActionMenu.show_message("you played online games, although it give you more stress but thats the only place where you can vent your boredom")
-				await ActionMenu.choice_made
-				GameManager.modify_stats(10, 10)
-				GameManager.advance_time(560)
-			else:
-				ActionMenu.show_message("you spent time watching online video and social media")
-				await ActionMenu.choice_made
-				GameManager.modify_stats(5, 10)
-				GameManager.advance_time(460)
-		"Exit":
-			# Check the room player currently standing in
-			var current_room = get_tree().current_scene.scene_file_path.to_lower()
-			
-			if "balcony" in current_room:
-				# Advance the time by 5 hours (300 minutes)
-				GameManager.advance_time(300)
-				GameManager.entrance_door = "exit" 
-				
-			else:
-				# No time advanced when leaving
-				GameManager.entrance_door = "exit" 
-			
-			# Change the scene
-			if target_scene_path != "":
-				GameManager.current_room_path = target_scene_path 
-				SceneTransition.change_scene(target_scene_path)
 				
 		"Altar":
 			GameManager.cutscene_dialogues = [

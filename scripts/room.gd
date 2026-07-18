@@ -96,7 +96,7 @@ func play_intro_sequence():
 		tween.set_parallel(true) # Run fades at the same time
 		for child in intro_ui.get_children():
 			if child is CanvasItem:
-				tween.tween_property(child, "modulate:a", 0.0, 2.0) 
+				tween.tween_property(child, "modulate:a", 0.0, 1.0) 
 		
 		await tween.finished
 		intro_ui.hide()

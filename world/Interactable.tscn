@@ -11,7 +11,7 @@ shader = ExtResource("2_wk4h6")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Interactable" type="Area2D"]
 script = ExtResource("1_hgjy5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
